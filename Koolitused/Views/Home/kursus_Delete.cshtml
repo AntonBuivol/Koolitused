@@ -1,0 +1,40 @@
+﻿@model Koolitused.Models.Kursus
+
+@{
+    ViewBag.Title = "Kustuta";
+}
+
+<h2>Kustuta</h2>
+
+<h3>Kas olete kindel, et soovite selle kustutada?</h3>
+<div>
+    <h4>Kursus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LapsId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LapsId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KoolitusId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KoolitusId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Kustuta" class="btn btn-default" /> |
+            @Html.ActionLink("Tagasi nimekirja", "Kursus")
+        </div>
+    }
+</div>
